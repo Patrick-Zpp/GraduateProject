@@ -1,0 +1,23 @@
+User:
+UserName: Student ID
+Status: Active/Negative
+UserName	Password	Status
+		
+For login/register
+
+Student:
+S_ID	Score1	Score2	Score3	Score4	Total_S	CET4	CET6
+							
+For access the successful rate of application
+
+Project:
+Project_ID	P_Name	P_Address	P_Duration	P_Subject	P_Score	P_EngScore	P_Intro
+							
+
+Project_Forum: Exchange students introduce the project they joined
+Project_ID	S_ID	Date	Content
+			
+
+Share_Forum: Exchange students share their experience
+Share_ID	S_ID	Date	Content
+			
