@@ -1,3 +1,4 @@
+#Version 1.0
 User:
 UserName: Student ID
 Status: Active/Negative
@@ -21,3 +22,54 @@ Project_ID	S_ID	Date	Content
 Share_Forum: Exchange students share their experience
 Share_ID	S_ID	Date	Content
 			
+#Version 1.1 -- 17/01/09
+User:
+UserName: Student ID
+Status: Active/Negative
+UserName	Password	Status	email
+			
+For login/register
+
+Student:
+S_ID	Score1	Score2	Score3	Score4	Total_S	CET4	CET6
+							
+For access the successful rate of application
+
+Join:
+Project_ID	S_ID
+	
+
+Project:
+Project_ID	P_Name	P_Region	P_Duration	P_Subject	P_Score	P_EngScore	P_Intro	P_Subject	P_Brief
+									
+
+Project_Forum: Exchange students introduce the project they joined
+Project_ID	S_ID	Date	Content
+			
+
+Share_Forum: Exchange students share their experience
+Share_ID	S_ID	Date	Content
+			
+
+
+Page 
+1.	Login Page
+2.	Registration Page (send email to active account)
+3.	Home Page
+4 Title: Project Intro
+		 Life Share
+		 Learning Share
+		 ??
+4.	Project Intro
+	1.	classify by subject
+	2.	classify by region: America/Asia/Australia/Europe
+	3.	all project: can select by duration/score/English score
+	4.	selected project intro (If a student have join that project, he/she can add comment)
+	5.	(under consideration)access Probability of successful application
+		1.	according the score required, judge whether the election, If No 2, If Yes  3
+		2.	calculate the score you need to get next term
+		3.	according to the rank, show the % of successful application
+5.	Life Share
+	1.	all share: can selected by region/project ID/project subject
+	2.	selected share: article and picture
+6.	Learning Share
