@@ -1,0 +1,49 @@
+package com.study.user.service;
+
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
+import com.study.user.dao.LoginDao;
+import com.study.user.model.user;
+
+@Service
+public class LoginService {
+ 
+	@Resource
+	LoginDao dao;
+	public user login(String username, String password) throws Exception{
+        //判断用户名和密码是否正确
+		user user = new user();
+		user = dao.login(username,password);
+		if(user==null){
+			throw new Exception("your password is wrong!");
+		}else{
+			return user;
+		}		
+	}
+	
+	//判断用户是否存在
+	public void isAccount(String username) throws Exception {
+		if(dao.isAccount(username)==false){
+			throw new Exception("The account does not exist");
+		}
+	}
+   //判断为不为空
+	public void isEmpty(String username, String password) throws Exception {
+		if(username==null||"".equals(username)){
+			throw new Exception("Username can not be empty!");
+		}
+		if(password==null||"".equals(password)){
+			throw new Exception("password can not be empty!");
+		}
+		
+	}
+    
+	//判断用户是否没有验证邮箱
+	public void checkActive(String userid) throws Exception { 
+		if(dao.checkActive(userid)==false){
+			throw new Exception("You havn't activate your online banking account. Please check the activation email in your mailbox.");
+		}
+		
+	}
+
+}
