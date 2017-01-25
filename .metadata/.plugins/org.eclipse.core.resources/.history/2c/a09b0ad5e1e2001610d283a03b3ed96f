@@ -1,0 +1,60 @@
+package com.bank.user.controller;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.swing.JOptionPane;
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.bank.user.Sendmail;
+import com.bank.user.model.user;
+import com.bank.user.service.RegisterService;
+
+@Controller
+public class RegisterController {
+	@Resource
+	RegisterService registerservice;
+	
+	@Resource
+	HttpServletRequest request;
+	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public String register(@RequestParam String uname,@RequestParam String IdNum,@RequestParam String email,@RequestParam String pwd){
+			
+		 try {
+			
+			//判断这些字段是否合法
+			registerservice.isCorrect(uname,IdNum,email,pwd);
+			
+			//判断是否有银行卡
+			registerservice.isCard(uname,IdNum);
+			
+			//判断是否已经注册过了
+			registerservice.isExist(IdNum);
+			
+			//执行注册
+			user user =new user();
+			user=registerservice.register(uname,IdNum,email,pwd);
+			
+			//注册成功时将网上银行的状态改为not activated.
+			registerservice.changeActive(IdNum);
+			
+			//如果注册成功，则发送一条邮件
+			Sendmail send = new Sendmail(user,"activemail");
+			send.start();
+			
+			request.setAttribute("flag", "yes");
+			
+		} catch (Exception e){
+		   request.setAttribute("message", e.getMessage());
+		   return "register";
+		}
+								
+		//返回注册成功页面
+		return"register";
+	}
+}

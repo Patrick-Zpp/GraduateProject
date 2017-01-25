@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/study/user/DBhelper.java=UTF-8
+encoding//src/main/java/com/study/user/Sendmail.java=UTF-8
+encoding//src/main/java/com/study/user/controller/LoginController.java=UTF-8
+encoding//src/main/java/com/study/user/controller/RegisterController.java=UTF-8

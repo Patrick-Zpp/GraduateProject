@@ -1,0 +1,170 @@
+package com.bank.user.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.stereotype.Repository;
+
+import com.bank.user.DBhelper;
+
+@Repository
+public class RegisterDao {
+	
+	public boolean register(String uname,String IdNum,String email, String pwd){
+	Connection con = DBhelper.connect();
+	PreparedStatement stat = null;
+	
+	String sqlString = "insert into user(uname,uid,email,pwd) values('"+uname+"','"+IdNum+"','"+email+"','"+pwd+"')";
+			
+
+		try {
+			stat = con.prepareStatement(sqlString);				
+		    int rs = stat.executeUpdate();
+		
+		   if(rs>0){
+			   stat.close();
+				con.close();
+			   return true;
+		   }else{
+			   stat.close();
+				con.close();
+			  return false;
+		        }
+		   } catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		 }finally{
+			 try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+		
+		//如果数据库没被关闭，则关闭
+				if(con!=null){
+						try {
+						con.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					} 			
+				}
+		return false;		
+}
+    
+	//判断用户是否已经注册过了
+	 public boolean isExist(String idNum) {
+		 Connection con = DBhelper.connect();
+		 PreparedStatement stat = null;
+			
+		 String sqlString = "select * from user where uid='"+idNum+"'";
+					
+		 try {
+		 	  stat = con.prepareStatement(sqlString);
+			  stat.execute(sqlString);
+						
+			  ResultSet rs = stat.executeQuery();
+		      if(rs.next()){
+		    	   stat.close();
+		    	    rs.close();
+					con.close();
+		    	  return true;
+		    	  }
+		      }catch (SQLException e){
+		    	  e.printStackTrace();
+		      }finally{
+		    	  try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		      }
+		 
+		//如果数据库没被关闭，则关闭
+			if(con!=null){
+					try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} 			
+			}
+		 return false;
+	}
+
+	 //判断是否有银行卡
+	public boolean isCard(String uname, String idNum) {
+		
+		Connection con = DBhelper.connect();
+		 PreparedStatement stat = null;
+			
+		 String sqlString = "select * from customercard where cusid = '"+idNum+"'";
+					
+		 try {
+		 	  stat = con.prepareStatement(sqlString);
+			  stat.execute(sqlString);
+						
+			  ResultSet rs = stat.executeQuery();
+		      if(rs.next()){
+		    	   stat.close();
+		    	    rs.close();
+					con.close();
+		    	  return true;
+		    	  }
+		      }catch (SQLException e){
+		    	  e.printStackTrace();
+		      }finally{
+		    	  try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		      }
+		 
+		//如果数据库没被关闭，则关闭
+			if(con!=null){
+					try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} 			
+			}
+		return false;	
+	}
+
+	
+	
+	public void changActive(String idNum) {
+		Connection con = DBhelper.connect();
+		 PreparedStatement stat = null;
+			
+		 String sqlString = "update customercard set status = 'Not Activated' where cusid = '"+idNum+"'";
+					
+		 try {
+		 	  stat = con.prepareStatement(sqlString);
+			  stat.execute(sqlString);
+						
+			  int r = stat.executeUpdate();
+		      
+			  if(r>0){
+				  System.out.println("change to not avtivated");
+			  }
+			  
+		      }catch (SQLException e){
+		    	  e.printStackTrace();
+		      }finally{
+		    	  try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		      }
+		
+	}
+}
