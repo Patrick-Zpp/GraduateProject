@@ -258,5 +258,18 @@ Administrator Page:
 7.	…
 
 
+17/02/04
+Three part:
+1.	Exchange Project Introduction
+	Project Introduction – upload by administer
+	No comment forum
+	User just can browser
+2.	Exchange Life Forum
+	Use UEditor plugin
+	Ckeditor: 
+	Config and photo upload
+	http://blog.csdn.net/saytime/article/details/51416411
+	http://www.360doc.com/content/15/0720/11/18232756_486171446.shtml
+3.	Learning Material Sharing
 
 
