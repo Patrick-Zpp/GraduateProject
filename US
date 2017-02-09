@@ -1,0 +1,73 @@
+User:
+Login & Active part:
+1:
+I want to login the system by input my ID and password, and after login the system, the user id will show on the top of the page.
+2:
+First time login the system, need to activate the account first. Click the activate button will send an activation request to administrator.
+3:
+If the account was locked, system will remind user when he login and suggest user to send an unlock request to administrator.
+20:
+If I click the logout button can logout the system.
+
+Project introduction part:
+4:
+As a user, when I want to read the project, I need to choose by region and subject first.
+5:
+After all project shown, I also can choose it by duration and performance requirements
+6:
+Project just show its ID/name/region/subject/duration/performance requirements/brief
+7:
+After click the project ID/name, it will turn to the project detail page, including ID/name/region/
+subject/duration/performance requirements/brief/other requirements/introduction
+
+Life sharing part:
+8:
+When turn to life sharing page, can choose browse or publish.
+9:
+Choose browse, show all life share article title and theme, also can select specific article by choose theme
+10:
+After click article title, turn to article detailed and can browser and add comments.
+11:
+Choose publish, turn to edit page, input title/theme/experience.
+
+Learning material share
+12:
+When turn to learning material share page, can see all the material, also can select by subject.
+13:
+When turn to learning material share page, can upload material and need to choose the subject.
+
+
+
+Supplement:
+User information page
+23:
+When click the user id, can turn to user information page and can know what article have been published and what material have been uploaded.
+User information include: id, name, class, grade, score of each term, English score, if join any exchange project before
+
+
+Administrator:
+14:
+Login and then turn to home page, which can choose to manager account status/check project information/life share article/comment/learning material/manage user
+15:
+Check project information, can publish new project or delete existing project or update existing project
+16:
+Check life share article, can lock the existing article and send an email to who publish the article.
+17:
+Check life share article, can delete the article comment.
+18:
+Check learning material share, can delete the existing uploaded material and will send an email to who upload it.
+19:
+Can lock and unlock the user account and can search account by user id to check account status.
+21:
+If click the logout button, can logout the system
+24:
+Manager account status, can receive user’s account activation request and account unlock request, then can active or unlock user’s account and auto send an email to inform user the result.
+
+Supplement:
+22:
+If click admin id, can reset the password.
+
+
+Picture upload: http://www.cnblogs.com/bunuo/p/6082722.html
+Picture upload ( base on spring mvc ): http://blog.csdn.net/brooksyao/article/details/53125789
+
