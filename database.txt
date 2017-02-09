@@ -272,4 +272,137 @@ Three part:
 	http://www.360doc.com/content/15/0720/11/18232756_486171446.shtml
 3.	Learning Material Sharing
 
+17/02/09
+User:
+UserName: Student ID
+Status: Active/Negative/Lock
+	  Initial status is Negative
+S_ID	Password	Status	email
+		Active/Negative/Lock	
+For login/register
+Active: after active account by email, can login the system
+Negative: before active account by email, cannot login the system
+Lock: administrator lock the account, student need to askd administrator for help to unlock
+	If the account is locked, when user login the system, it will message box will pop-up and inform 	the account is locked and cannot login now, need to ask administrator for help
+
+Student_Score:
+S_ID	Score1	Score2	Score3	Score4	Total_S	CET4	CET6
+							
+To show students’ score and access the successful rate of application according to their score
+
+Student_Info
+S_ID	S_Grade	S_Class	S_Subject
+			
+For student detailed information
+
+Join:
+Project_ID	S_ID
+	
+
+Project:
+Project_ID	P_Name	P_Region	P_Duration	P_Subject	P_Score	P_EngScore	P_Intro	P_Brief
+								
+
+Project_Forum: Exchange students introduce the project they joined
+Project_ID	S_ID	Date	Content
+			
+
+Share_Forum: Forum (discuss Exchange students share their experience)
+Share_ID	S_ID	Date	Content
+			
+
+
+
+
+
+
+Share_Life: Exchange students share their experience
+Share_ID	S_ID	Picture	Experience	P_ID	Status (under consideration)	theme
+					Normal/Lock	Travel/sale/learn/school intro
+P_Name/P_Region/P_Subject? Should keep or find them in Project table by P_ID
+Status:
+Normal: students add article, show on Life Share portal
+Lock: administrator lock, the article will not show on student’s portal
+If article locked, student can find administrator to unlock
+
+Material Record:
+S_ID	Title	subject	Status
+			Upload/Download
+
+
+Student Page:
+1.	Login Page
+2.	Registration Page (send email to active account)
+3.	Home Page
+4 Title: Project Intro
+		 Life Share
+		 Learning Share
+		 Personal Portal
+4.	Project Intro
+1.	classify by region: America/Asia/Australia/Europe
+2.	classify by subject: Foreign Language/Computer/Financial/Legal/Literature/Mathematics
+3.	all project: still can select by duration/score/English score
+4.	selected project intro (There has a forum for students to communicate)
+5.	(under consideration)access Probability of successful application
+1.	according the score required, judge whether the election, If No 2, If Yes  3
+2.	calculate the score you need to get next term
+3.	according to the rank, show the % of successful application
+5.	Life Share
+1.	all share: can selected by region/project ID/project subject
+2.	selected share: article and picture
+3.	can add life share
+6.	Learning Share
+1.	download (separate into two parts: Chinese and English material)(can selected by subject) (under consideration: can search by key word)
+2.	upload
+
+7.	Personal Portal
+1.	will show personal information
+2.	can edit the email address, will send an email to confirm email address changed
+3.	will show the article you create at Life Share (just show title, and Share_ID)
+4.	click title will show whole article, can edit and submit again
+5.	will show the record of the material you upload and download
+6.	…
+8.	….
+
+Administrator Page:
+1.	Login Page(Same as Guest)
+2.	Home Page
+3.	Project Intro
+1.	All project can edit/delete/add
+2.	Can search project by subject/region/term
+4.	Life Share
+1.	All share can delete/lock
+5.	Learning Share
+1.	all material will show and can delete (separated by Chinese and English version)
+2.	can search material by subject
+6.	Student Information
+1.	not show all student
+2.	can search student by grade/subject/class/student ID
+3.	student detailed information will show on portal
+4.	administrator can lock the account
+7.	…
+
+
+
+17/02/04
+Three part:
+1.	Exchange Project Introduction
+Project Introduction – upload by administer
+No comment forum
+User just can browser
+2.	Exchange Life Forum
+Use UEditor plugin
+Ckeditor: 
+Config and photo upload
+http://blog.csdn.net/saytime/article/details/51416411
+http://www.360doc.com/content/15/0720/11/18232756_486171446.shtml
+
+boostrap and jsp text editor:
+http://www.jb51.net/article/81929.htm
+http://blog.csdn.net/u014477038/article/details/52356234
+bootstrap-wysiwyg
+
+
+3.	Learning Material Sharing
+
 
